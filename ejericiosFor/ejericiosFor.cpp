@@ -8,16 +8,21 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE, LPTSTR cmdLine, int cmdSho
 
 void ejericiosFor::Window_Open(Win::Event& e)
 {
+	wstring texto;
+	for (int i = 1; i <= 12; i++)
+	{
+		if (i%2 ==0)
+		{
+			
+		}
+		else
+		{
+			Sys::Format(texto, L"El cuadrado de %d es: %d\r\n", i, i*i);
+			//tbxSalida.Text+= Sys::Convert::ToString(i);
+			tbxSalida.Text += texto;
+		}
+	}
 }
 
-void ejericiosFor::btAgregar_Click(Win::Event& e)
-{
-	tbxSalida.Text = L"";
-	for (int i = 1; i <= contador; i++)
-	{
-		tbxSalida.Text += std::to_wstring(i);
-		tbxSalida.Text += L",";
-	}
-	contador++;
-}
+
 
